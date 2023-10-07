@@ -1,0 +1,51 @@
+<h2>Top Listed Movie UpDates</h2>
+<div class="form">
+<form #frm="ngForm" (ngSubmit)="updateInfo(frm)">
+    <div>
+        <input type="text" name="location" value="" ngModel>
+        <button type="submit" name="button">Add Language</button>
+    </div>
+</form>
+</div>
+
+<br>
+<div class="inform">
+    <div>
+        <button type="button" name="button" (click)="getInfoFromServiceClass1()">Movie 1</button>
+        <ul class="list-group">
+            <li *ngFor="let info of inforeceived1" class="list-group-item">{{info}}</li>
+        </ul>
+    </div>
+    <pre></pre>
+    <div>
+        
+        <button type="button" name="button" (click)="getInfoFromServiceClass2()">Movie 2</button>
+        <ul class="list-group">
+            <li *ngFor="let info of inforeceived2" class="list-group-item">{{info}}</li>
+        </ul>
+    </div>
+    <pre></pre>
+    <div>
+    
+        <button type="button" name="button" (click)="getInfoFromServiceClass3()">Movie 3</button>
+        <ul class="list-group">
+            <li *ngFor="let info of inforeceived3" class="list-group-item">{{info}}</li>
+        </ul>
+    </div>
+    <pre></pre>
+    <div>
+        
+        <button type="button" name="button" (click)="getInfoFromServiceClass4()">Movie 4</button>
+        <ul class="list-group">
+            <li *ngFor="let info of inforeceived4" class="list-group-item">{{info}}</li>
+        </ul>
+    </div>
+    <pre></pre>
+    <div>
+       
+        <button type="button" name="button" (click)="getInfoFromServiceClass5()">Movie 5</button>
+        <ul class="list-group">
+            <li *ngFor="let info of inforeceived5" class="list-group-item">{{info}}</li>
+        </ul>
+    </div>
+</div>

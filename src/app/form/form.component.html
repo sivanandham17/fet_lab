@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form #login="ngForm" (ngSubmit)="submit(login)">
+        <h1>User Registration Form</h1>
+            <div class="form-group">
+                <label> FIRST NAME  </label>
+                <input type="text" class="form-control" name="fname" minlength="5" #fname="ngModel" required ngModel><br><br>
+                <div *ngIf="fname.touched && fname.invalid">
+                    <div *ngIf="fname.errors?.['required']">FirstName is Required</div>
+                    <div *ngIf="fname.errors?.['minlength']">Short In Length</div>
+                </div>
+            
+            <br>
+        </div>
+        <div class="form-group">
+            <label> LAST NAME  </label>
+            <input type="text" class="form-control" name="lname" minlength="5" #lname="ngModel" required ngModel><br><br>
+                <div *ngIf="lname.touched && lname.invalid">
+                    <div *ngIf="lname.errors?.['required']">LastName is Required</div>
+                    <!-- <div *ngIf="lname.errors?.['minlength']">Short In Length</div> -->
+                </div>
+            
+            <br>
+        </div>
+        <div class="form-group">
+            <label> AGE  </label>
+            <input type="number" class="form-control" name="age" #age="ngModel" required ngModel>
+            <div *ngIf="age.touched && age.invalid">
+                <div *ngIf="age.errors?.['required']">Age is Required</div>
+            
+        </div>
+        <br><br>
+        </div>
+        <div class="form-group">
+            <label> COURSE  </label>
+            <input type="text" class="form-control" name="course"  #course="ngModel" required ngModel><br><br>
+                <div *ngIf="course.touched && course.invalid">
+                    <div *ngIf="course.errors?.['required']">course is Required</div>
+                    <div *ngIf="course.errors?.['minlength']">Short In Length</div>
+                </div>
+                <br><br>
+        </div>
+
+        <div class="form-group">
+            <label> PHONE NO  </label>
+            <input type="number" class="form-control" name="pn" #pn="ngModel" required ngModel>
+            <div *ngIf="pn.touched && pn.invalid">
+                <div *ngIf="pn.errors?.['required']">Phone no is Required</div>
+            
+        </div>
+        <br><br>
+        </div>
+    
+        <br><br><button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
